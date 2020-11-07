@@ -31,7 +31,7 @@
 	},
 	"dependencies": {
 		"@types/node": "8.10.54",
-		"pinus-logger": "^1.4.2"
+		"pinus-logger": "npm:@dming/pinus-logger@^1.4.2"
 	},
 	"devDependencies": {
 		"tslint": "5.20.1",
