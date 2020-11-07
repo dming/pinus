@@ -1,3 +1,16 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [1.4.3](https://github.com/node-pinus/pinus/compare/v1.4.3-alpha.0...v1.4.3) (2020-11-07)
+
+**Note:** Version bump only for package pinus-workspaces
+
+
+
+
+
 
 
 #### 1.4.2
@@ -26,4 +39,3 @@ fix [#110](https://github.com/node-pinus/pinus/issues/110)  pinus-logger 的logg
 #### 1.3.14
 
 fix [#104](https://github.com/node-pinus/pinus/issues/104)
-
