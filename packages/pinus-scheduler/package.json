@@ -30,7 +30,7 @@
 		"node": ">=8.5"
 	},
 	"dependencies": {
-		"pinus-logger": "npm:@dming/pinus-logger@^1.4.2"
+		"pinus-logger": "npm:@dming/pinus-logger@^1.4.10"
 	},
 	"devDependencies": {
 		"@types/node": "8.10.54",
