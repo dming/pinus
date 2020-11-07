@@ -1,5 +1,8 @@
 
 require('cliff');
+
+const CONF = require("../../../../../dist/app/config/conf").CONF;
+
 /**
  *  Constant Variables
  */
@@ -10,11 +13,11 @@ export let KILL_CMD_WIN = 'taskkill /im node.exe /f';
 
 export let CUR_DIR = process.cwd();
 export let DEFAULT_GAME_SERVER_DIR = CUR_DIR;
-export let DEFAULT_USERNAME = 'admin';
-export let DEFAULT_PWD = 'admin';
+export let DEFAULT_USERNAME = CONF.DEFUALT_USER;
+export let DEFAULT_PWD = CONF.DEFAULT_PWD;
 export let DEFAULT_ENV = 'development';
-export let DEFAULT_MASTER_HOST = '127.0.0.1';
-export let DEFAULT_MASTER_PORT = 3005;
+export let DEFAULT_MASTER_HOST = CONF.MASTER_HOST;
+export let DEFAULT_MASTER_PORT = CONF.MASTER_PORT;
 
 export let CONNECT_ERROR = 'Fail to connect to admin console server.';
 export let FILEREAD_ERROR = 'Fail to read the file, please check if the application is started legally.';

@@ -23,7 +23,7 @@ export interface ModuleRecord {
 /**
  * Load admin modules
  */
-export function loadModules(self: {app: Application , modules: Array<IModule>}, consoleService: ConsoleService) {
+export function loadModules(self: { app: Application, modules: Array<IModule> }, consoleService: ConsoleService) {
     // load app register modules
     let _modules = self.app.get(Constants.KEYWORDS.MODULE);
 
@@ -84,7 +84,7 @@ export function registerDefaultModules(isMaster: boolean, app: Application, clos
             app.registerAdmin(admin.modules.systemInfo);
             app.registerAdmin(admin.modules.nodeInfo);
         }
-        app.registerAdmin(OnlineUserModule);
+        // app.registerAdmin(OnlineUserModule);
         app.registerAdmin(admin.modules.monitorLog, { path: pathUtil.getLogPath(app.getBase()) });
         app.registerAdmin(admin.modules.scripts, { app: app, path: pathUtil.getScriptPath(app.getBase()) });
         if (os.platform() !== Constants.PLATFORM.WIN) {

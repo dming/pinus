@@ -41,7 +41,7 @@ export class ChannelService implements IComponent {
     channelRemote: ChannelRemote;
     name: string;
 
-    constructor(app: Application, opts ?: ChannelServiceOptions) {
+    constructor(app: Application, opts?: ChannelServiceOptions) {
         opts = opts || {};
         this.app = app;
         this.channels = {};
@@ -82,7 +82,7 @@ export class ChannelService implements IComponent {
      * @return {Channel}
      * @memberOf ChannelService
      */
-    getChannel(name: string, create ?: boolean) {
+    getChannel(name: string, create?: boolean) {
         let channel = this.channels[name];
         if (!channel && !!create) {
             channel = this.channels[name] = new Channel(name, this);
@@ -184,7 +184,7 @@ export class ChannelService implements IComponent {
             utils.invokeCallback(cb, null);
         });
 
-        let genCB = function (serverId ?: string) {
+        let genCB = function (serverId?: string) {
             return function (err: Error) {
                 if (err) {
                     logger.error('[broadcast] fail to push message to serverId: ' + serverId + ', err:' + err.stack);
@@ -362,7 +362,7 @@ export class Channel {
      * @param {Object} opts user-defined push options, optional
      * @param {Function} cb callback function
      */
-    pushMessage(route: string, msg: any, opts ?: any, cb ?: (err: Error | null, result ?: void) => void) {
+    pushMessage(route: string, msg: any, opts?: any, cb?: (err: Error | null, result?: void) => void) {
         if (this.state !== ST_INITED) {
             utils.invokeCallback(cb, new Error('channel is not running now'));
             return;
@@ -383,7 +383,7 @@ export class Channel {
         sendMessageByGroup(this.__channelService__, route, msg, this.groups, opts, cb);
     }
 
-    apushMessage: (route: string, msg: any, opts ?: any) => Promise<void> = utils.promisify(this.pushMessage);
+    apushMessage: (route: string, msg: any, opts?: any) => Promise<void> = utils.promisify(this.pushMessage);
 }
 
 /**
@@ -447,7 +447,7 @@ let sendMessageByGroup = function (channelService: ChannelService, route: string
     let successFlag = false;
     let failIds: SID[] = [];
 
-    logger.debug('[%s] channelService sendMessageByGroup route: %s, msg: %j, groups: %j, opts: %j', app.serverId, route, msg, groups, opts);
+    // logger.debug('[%s] channelService sendMessageByGroup route: %s, msg: %j, groups: %j, opts: %j', app.serverId, route, msg, groups, opts);
     if (count === 0) {
         // group is empty
         utils.invokeCallback(cb);
@@ -596,7 +596,7 @@ let removeAllFromStore = function (self: ChannelService, key: string) {
     }
 };
 
-let genKey = function (self: ChannelService, name ?: string) {
+let genKey = function (self: ChannelService, name?: string) {
     if (!!name) {
         return self.prefix + ':' + self.app.serverId + ':' + name;
     } else {

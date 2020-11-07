@@ -11,7 +11,7 @@ import * as path from 'path';
 let logger = getLogger('pinus-scheduler', path.basename(__filename));
 
 let timerCount = 0;
-let map: {[key: number]: Job.Job} = {};
+let map: { [key: number]: Job.Job } = {};
 let queue = PriorityQueue.createPriorityQueue(comparator);
 
 let jobId = 0;
@@ -141,11 +141,10 @@ function getNextJob() {
     return (!!job) ? job : null;
 }
 
-function comparator(e1: {time: number}, e2: {time: number}) {
+function comparator(e1: { time: number }, e2: { time: number }) {
     return e1.time > e2.time;
 }
 
-export
-{
-    scheduleJob, cancelJob
+export {
+    scheduleJob, cancelJob, SimpleTriggerOpts
 };

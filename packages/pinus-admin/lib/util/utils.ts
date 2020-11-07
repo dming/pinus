@@ -87,7 +87,7 @@ function canBeResolve(path: string) {
 
 export function defaultAuthUser(msg: {username: string, password: string, md5: string}, env: string, cb: (user: AdminUserInfo) => void) {
     let adminUser = null;
-    let appBase = process.cwd();
+    let appBase = path.dirname(require.main.filename);//process.cwd();
     let adminUserPath = path.join(appBase, DEFAULT_ADMIN_PATH.ADMIN_USER);
     let presentPath = path.join(appBase, 'config', env, DEFAULT_ADMIN_PATH.ADMIN_FILENAME);
     if (canBeResolve(adminUserPath)) {
@@ -137,7 +137,7 @@ export function defaultAuthServerMaster(msg: {id: string, serverType: string, to
     }
 
     let servers = null;
-    let appBase = process.cwd();
+    let appBase = path.dirname(require.main.filename);//process.cwd();
     let serverPath = path.join(appBase, '/config/adminServer');
     let presentPath = null;
     if (env) {
@@ -170,7 +170,7 @@ export function defaultAuthServerMonitor(msg: {id: string, serverType: string}, 
     let type = msg['serverType'];
 
     let servers = null;
-    let appBase = process.cwd();
+    let appBase = path.dirname(require.main.filename);//process.cwd();
     let serverPath = path.join(appBase, '/config/adminServer');
     let presentPath = null;
     if (env) {

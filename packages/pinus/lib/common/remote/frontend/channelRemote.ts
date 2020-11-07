@@ -3,11 +3,11 @@
  * Receive push request from backend servers and push it to clients.
  */
 import * as utils from '../../../util/utils';
-import {getLogger} from 'pinus-logger';
-import {Application} from '../../../application';
-import {UID, SID} from '../../../util/constants';
-import {ScheduleOptions} from '../../../interfaces/IPushScheduler';
-import {Session} from '../../service/sessionService';
+import { getLogger } from 'pinus-logger';
+import { Application } from '../../../application';
+import { UID, SID } from '../../../util/constants';
+import { ScheduleOptions } from '../../../interfaces/IPushScheduler';
+import { Session } from '../../service/sessionService';
 import * as path from 'path';
 
 let logger = getLogger('pinus', path.basename(__filename));
@@ -54,7 +54,7 @@ export class ChannelRemote {
                     }
                 }
             }
-            logger.debug('[%s] pushMessage uids: %j, msg: %j, sids: %j', this.app.serverId, uids, msg, sids);
+            // logger.debug('[%s] pushMessage uids: %j, msg: %j, sids: %j', this.app.serverId, uids, msg, sids);
             connector.send(null, route, msg, sids, opts, function (err) {
                 if (err) {
                     return reject(err);

@@ -19,7 +19,7 @@ export interface HandlerServiceOptions {
     handlersPaths?: string[];
 }
 
-export type HandlerCallback = (err: Error, response ?: any) => void;
+export type HandlerCallback = (err: Error, response?: any) => void;
 export type HandlerMethod = (msg: any, session: FrontendSession | BackendSession) => Promise<any>;
 export type Handler = { [method: string]: HandlerMethod };
 export type Handlers = { [handler: string]: Handler };
@@ -166,7 +166,7 @@ export class HandlerService {
     /**
      * Load handlers from current application
      */
-    private loadHandlers(serverType: string) {
+    public loadHandlers(serverType: string) {
         let paths = this.handlerPaths[serverType];
         for (let path of paths) {
             this.parseHandler(serverType, path);

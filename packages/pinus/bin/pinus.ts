@@ -28,4 +28,22 @@ fs.readdirSync(__dirname + '/commands').forEach(function (filename) {
     }
 });
 
+const customCmdsDir = path.resolve(__dirname, "../../../../dist/app/services/gm/modules");
+fs.readdirSync(customCmdsDir).forEach(function (filename) {
+    if (/\Module.js$/.test(filename)) {
+        try {
+            let name = filename.substr(0, filename.lastIndexOf('.'));
+            const absPath = customCmdsDir + "/" + name;
+            let _command = require(absPath).default;
+            if (isFunction(_command)) {
+                _command(program);
+            } else {
+                console.log("try to load custom module in path=%s, but _command should be function", absPath);
+            }
+        } catch (e) {
+            console.error("in node_modules/pinus/dist/bin/pinus.js error = \n %j", e);
+        }
+    }
+});
+
 program.parse(process.argv);

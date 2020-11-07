@@ -32,7 +32,7 @@ export * from './components/backendSession';
 export * from './components/channel';
 
 
-export {RestartNotifyModule} from './modules/restartNotifyModule';
+export { RestartNotifyModule } from './modules/restartNotifyModule';
 
 export * from './server/server';
 export * from './monitor/monitor';
@@ -47,7 +47,7 @@ export * from './filters/handler/time';
 export * from './filters/handler/serial';
 export * from './filters/handler/timeout';
 
-export {default as events} from './util/events';
+export { default as events } from './util/events';
 export * from './util/constants';
 export * from './util/utils';
 export * from './util/pathUtil';
@@ -72,3 +72,6 @@ export * from 'pinus-protobuf';
 export * from 'pinus-protocol';
 export * from 'pinus-rpc';
 export * from 'pinus-scheduler';
+
+// new
+export * from './util/countDownLatch';

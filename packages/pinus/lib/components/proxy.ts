@@ -264,7 +264,7 @@ let genRouteFun = function () {
     };
 };
 
-export type RouteCallback = (err: Error, routeToServerId ?: string) => void;
+export type RouteCallback = (err: Error, routeToServerId?: string) => void;
 
 let defaultRoute = function (session: Session, msg: any, app: Application, cb: RouteCallback) {
     let list = app.getServersByType(msg.serverType);
@@ -278,5 +278,6 @@ let defaultRoute = function (session: Session, msg: any, app: Application, cb: R
     utils.invokeCallback(cb, null, list[index].id);
 };
 
+// msg:RpcMsg
 export type RouteFunction = (routeFrom: any, msg: any, app: Application, cb: RouteCallback) => void;
 export type RouteMaps = { [key: string]: RouteFunction };
