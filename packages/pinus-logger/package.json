@@ -1,6 +1,13 @@
 {
-    "name": "pinus-logger",
+    "name": "@dming/pinus-logger",
     "version": "1.4.2",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dming/pinus.git"
+      },
+      "publishConfig": {
+       "registry": "https://npm.pkg.github.com/dming"
+      },
     "private": false,
     "main": "./dist/index",
     "types": "./lib/index",

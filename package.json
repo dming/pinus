@@ -58,12 +58,6 @@
 	"license": "MIT",
 	"private": true,
 	"workspaces": [
-		"packages/*",
-		"tools/*",
-		"plugins/*",
-		"examples/simple-example/*",
-		"examples/websocket-chat/*",
-		"examples/websocket-chat-ts-run/*",
-		"examples/robot-sample"
+		"packages/*"
 	]
 }

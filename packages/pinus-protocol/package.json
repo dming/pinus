@@ -1,6 +1,13 @@
 {
- "name": "pinus-protocol",
+ "name": "@dming/pinus-protocol",
  "version": "1.4.2",
+ "repository": {
+    "type": "git",
+    "url": "https://github.com/dming/pinus.git"
+  },
+  "publishConfig": {
+   "registry": "https://npm.pkg.github.com/dming"
+  },
  "private": false,
  "main": "./dist",
  "types": "./lib/index",

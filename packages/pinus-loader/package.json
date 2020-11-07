@@ -1,6 +1,13 @@
 {
-	"name": "pinus-loader",
+	"name": "@dming/pinus-loader",
 	"version": "1.4.2",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dming/pinus.git"
+	  },
+	  "publishConfig": {
+	   "registry": "https://npm.pkg.github.com/dming"
+	  },
 	"main": "./dist/index",
 	"types": "./lib/index",
 	"files": [
