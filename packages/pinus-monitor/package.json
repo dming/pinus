@@ -1,14 +1,14 @@
 {
  "name": "@dming/pinus-monitor",
  "description": "monitor the operating-system and process information",
- "version": "1.4.2",
+ "version": "1.4.3-alpha.0",
  "repository": {
-    "type": "git",
-    "url": "https://github.com/dming/pinus.git"
-  },
-  "publishConfig": {
-   "registry": "https://npm.pkg.github.com/dming"
-  },
+  "type": "git",
+  "url": "https://github.com/dming/pinus.git"
+ },
+ "publishConfig": {
+  "registry": "https://npm.pkg.github.com/dming"
+ },
  "main": "./dist/index",
  "types": "./lib/index",
  "files": [
