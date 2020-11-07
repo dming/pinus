@@ -10,9 +10,6 @@
   },
   "main": "./dist/protobuf",
   "types": "./lib/protobuf",
-  "dependencies": {
-    "@types/node": "8.10.54"
-  },
   "files": [
     "dist",
     "lib",
@@ -32,6 +29,7 @@
     "node": ">=8.5"
   },
   "devDependencies": {
+    "@types/node": "8.10.54",
     "mocha": "6.2.2",
     "should": "13.2.3",
     "tslint": "5.20.1",
